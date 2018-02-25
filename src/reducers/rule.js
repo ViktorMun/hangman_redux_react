@@ -1,4 +1,4 @@
-const letter_guess = 'a'
+import {LETTER_GUESS}  from './guessletter'
 
 var word = 'helloworld'
 var guesses = []
@@ -14,7 +14,7 @@ const game = {
 
 export default (state = game, { type, payload } = {}) => {
   switch(type) {
-    case letter_guess :
+    case LETTER_GUESS :
       var secondState = Object.assign({}, state)
       secondState.guesses.push(payload)
       secondState.wordToShow = showGuess(secondState.word, secondState.guesses)
@@ -23,7 +23,7 @@ export default (state = game, { type, payload } = {}) => {
       secondState.gameOver = secondState.wrongGuessCount > 6
 
       state = secondState
-      break;
+      
      default :
         return state
   }
@@ -32,7 +32,7 @@ export default (state = game, { type, payload } = {}) => {
 function showGuess(word, guesses) {
   return word
   .split('')
-  .map(char => (guesses.includes(char)? char: ' * '))
+  .map(char => (guesses.includes(char)? char: ' _ '))
   .join('')
 }
 
