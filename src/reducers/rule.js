@@ -1,4 +1,4 @@
-const letter_guess = ''
+const letter_guess = 'a'
 
 var word = 'helloworld'
 var guesses = []
@@ -6,12 +6,13 @@ var guesses = []
 const game = {
   word: word,
   guesses: guesses,
-  wordToShow: showGuess(word, guesses)}
+  wordToShow: showGuess(word, guesses)
+  }
 
 export default (state = game, { type, payload } = {}) => {
   switch(type) {
     case letter_guess :
-      let secondState = Object.assign({}, state)
+      var secondState = Object.assign({}, state)
       secondState.guesses.push(payload)
       secondState.wordToShow = showGuess(secondState.word, secondState.guesses)
       secondState.wrongGuessCount = wrongGuessCount(secondState.word, secondState.guesses)
@@ -19,6 +20,7 @@ export default (state = game, { type, payload } = {}) => {
       secondState.gameOver = secondState.wrongGuessCount > 6
 
       state = secondState
+      break;
      default :
         return state
   }
@@ -35,7 +37,6 @@ function wrongGuessCount(word, guesses) {
 return guesses
   .filter(guess=> word.indexOf(guess) === -1)
   .length}
-
 
 
 function isWinner(word, guesses) {

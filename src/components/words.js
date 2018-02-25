@@ -1,17 +1,19 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-
-class Square extends PureComponent {
-  static propTypes = {
-    value: PropTypes.number.isRequired,
-  }
-
+class Game extends PureComponent {
   render() {
     return (
-      <div className="Square"/>
+      <div>
+        <h1>{ this.props.rule.wordToShow }</h1>
+
+      </div>
     )
   }
 }
 
-export default Square
+const mapStateToProps = ({rule}) => ({
+  rule
+})
+
+export default connect(mapStateToProps)(Game)
