@@ -33,3 +33,8 @@ header {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+body {
+    background-color: #F0FFF0;
+
+}

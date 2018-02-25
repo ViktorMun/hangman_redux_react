@@ -3,6 +3,7 @@ import {LETTER_GUESS}  from './guessletter'
 var word = 'hello'
 var guesses = []
 
+
 const game = {
   word: word,
   guesses: guesses,
@@ -21,7 +22,7 @@ export default (state = game, { type, payload } = {}) => {
       secondState.wrongGuessCount = wrongGuessCount(secondState.word, secondState.guesses)
       secondState.isWinner = isWinner(secondState.word, secondState.guesses)
       secondState.gameOver = secondState.wrongGuessCount > 6
-
+      console.log(guesses)
       state = secondState
 
      default :
@@ -32,18 +33,21 @@ export default (state = game, { type, payload } = {}) => {
 function showGuess(word, guesses) {
   return word
   .split('')
-  .map(char => (guesses.includes(char)? char: ' * '))
-  .join('')
+  .map(char => (guesses.includes(char)? char: ' □ '))
+  .join(' ')
+
 }
 
 function wrongGuessCount(word, guesses) {
 return guesses
   .filter(guess=> word.indexOf(guess) === -1)
-  .length}
+  .length
+}
+
 
 
 function isWinner(word, guesses) {
   return word
   .split('')
-  .join('')===showGuess(word,guesses)
+  .join(' ')===showGuess(word,guesses)
   ;}

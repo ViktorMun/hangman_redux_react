@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import './words.css'
 
 class Game extends PureComponent {
   render() {
@@ -9,7 +10,7 @@ class Game extends PureComponent {
         { this.props.rule.isWinner ? alert("You win million") : null }
         { this.props.rule.gameOver ? alert("You lost million"): null }
       <div>
-        { this.props.rule.wrongGuessCount}
+       <h3>Wrong answers: { this.props.rule.wrongGuessCount} </h3>
       </div>
       </div>
 

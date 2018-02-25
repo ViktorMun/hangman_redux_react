@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import guessGame from '../reducers/guessletter'
 
 
+
 class Guess extends PureComponent {
   constructor(props) {
     super()
@@ -19,6 +20,8 @@ class Guess extends PureComponent {
     this.refs.letter.value = ""
   }
 
+
+
   render() {
     return (
       <div className="editor">
@@ -32,9 +35,9 @@ class Guess extends PureComponent {
             />
 
           <div className="actions">
-            <button className="primary" onClick={this.guess.bind(this)}>Add letter</button>
+            <button className="primary" onClick={this.guess.bind(this)}>Check</button>
           </div>
-          <h4>Used letters </h4>
+
         </div>
     )}}
 
