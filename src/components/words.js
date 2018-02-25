@@ -6,9 +6,14 @@ class Game extends PureComponent {
     return (
       <div>
         <h1>{ this.props.rule.wordToShow }</h1>
-        { this.props.rule.isWinner ? <h1></h1> : null }
-        { this.props.rule.gameOver ? <h1></h1>: null }
+        { this.props.rule.isWinner ? alert("You win million") : null }
+        { this.props.rule.gameOver ? alert("You lost million"): null }
+      <div>
+        { this.props.rule.wrongGuessCount}
       </div>
+      </div>
+
+
     )
   }
 }

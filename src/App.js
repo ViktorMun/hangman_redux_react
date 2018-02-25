@@ -8,8 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-
+     <header> Hangman </header>
 
         <Words />
         <ActionGuess />

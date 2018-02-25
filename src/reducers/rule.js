@@ -1,6 +1,6 @@
 import {LETTER_GUESS}  from './guessletter'
 
-var word = 'helloworld'
+var word = 'hello'
 var guesses = []
 
 const game = {
@@ -23,7 +23,7 @@ export default (state = game, { type, payload } = {}) => {
       secondState.gameOver = secondState.wrongGuessCount > 6
 
       state = secondState
-      
+
      default :
         return state
   }
@@ -32,7 +32,7 @@ export default (state = game, { type, payload } = {}) => {
 function showGuess(word, guesses) {
   return word
   .split('')
-  .map(char => (guesses.includes(char)? char: ' _ '))
+  .map(char => (guesses.includes(char)? char: ' * '))
   .join('')
 }
 
@@ -45,4 +45,5 @@ return guesses
 function isWinner(word, guesses) {
   return word
   .split('')
-  .join('')===showGuess(word,guesses)}
+  .join('')===showGuess(word,guesses)
+  ;}

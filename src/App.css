@@ -13,6 +13,13 @@
   padding: 20px;
   color: white;
 }
+header {
+    float: left;
+    margin:0 0 30px 0;
+    padding: 60px 0 0 0 ;
+    width: 100%;
+  }
+
 
 .App-title {
   font-size: 1.5em;
