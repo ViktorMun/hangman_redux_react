@@ -6,7 +6,10 @@ var guesses = []
 const game = {
   word: word,
   guesses: guesses,
-  wordToShow: showGuess(word, guesses)
+  wordToShow: showGuess(word, guesses),
+  isWinner:false,
+  gameOver:false
+
   }
 
 export default (state = game, { type, payload } = {}) => {
