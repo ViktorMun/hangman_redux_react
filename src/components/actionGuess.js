@@ -29,7 +29,7 @@ class Guess extends PureComponent {
             type="text"
             ref="letter"
             className="title"
-            placeholder="Letter"
+            placeholder="Enter letter here"
             defaultValue=""
             onChange={this.updateLetter.bind(this)}
             />

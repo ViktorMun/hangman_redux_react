@@ -3,15 +3,24 @@ import React, { Component } from 'react';
 import './App.css';
 import Words from './components/words'
 import ActionGuess from './components/actionGuess'
-import store from './store'
-import showGuess from './reducers/rule'
-import guesses from './reducers/rule'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-     <header> Hangman </header>
+
+
+  <h1>
+  <span>H</span>
+  <span>A</span>
+  <span>N</span>
+  <span>G</span>
+  <span>M</span>
+  <span>A</span>
+  <span>N</span>
+  </h1>
+
+
 
         <Words />
         <ActionGuess />

@@ -24,9 +24,7 @@ export default (state = game, { type, payload } = {}) => {
       secondState.gameOver = secondState.wrongGuessCount > 6
       console.log(guesses)
       state = secondState
-
-     default :
-        return state
+     default : return state
   }
 }
 
